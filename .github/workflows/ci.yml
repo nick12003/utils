@@ -14,8 +14,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/workflows/install
-      - name: Build with
-        run: pnpm build bunchee
+      - name: Build with bunchee
+        run: pnpm build
   typecheck:
     runs-on: ubuntu-latest
     steps:
