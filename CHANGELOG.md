@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/nick12003/utils/compare/v1.0.0...v1.0.1) (2024-03-22)
+
+
+### Bug Fixes
+
+* gh ac ([a0fdadd](https://github.com/nick12003/utils/commit/a0fdadd24462847790b2873303952054a1abaafe))
+
 ## 1.0.0 (2024-03-17)
 
 
