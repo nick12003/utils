@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 // const isProduction: boolean = process.env.NODE_ENV === 'production';
 const prefix: string = 'Invariant failed';
 
