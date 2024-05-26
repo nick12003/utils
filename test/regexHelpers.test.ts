@@ -61,28 +61,36 @@ describe('regexHelpers', () => {
       expect(isEnglish(true).test('abc def')).toBe(true);
     });
 
+    it('should return false if the string is English and contain number', () => {
+      expect(isEnglish(false).test('abc123')).toBe(false);
+    });
+
+    it('should return true if the string is English and contain number', () => {
+      expect(isEnglish(false, true).test('abc123')).toBe(true);
+    });
+
     it('should return false if the string is English and contain punctuation', () => {
-      expect(isEnglish(false).test('abc!')).toBe(false);
+      expect(isEnglish(false, false).test('abc!@#')).toBe(false);
     });
 
     it('should return true if the string is English and contain punctuation', () => {
-      expect(isEnglish(false, true).test('abc!')).toBe(true);
+      expect(isEnglish(false, false, true).test('abc!@#')).toBe(true);
     });
 
     it('should return false if the string is English and contain full width character', () => {
-      expect(isEnglish(false, false).test('ＡＢＣ')).toBe(false);
+      expect(isEnglish(false, false, false).test('ＡＢＣ')).toBe(false);
     });
 
     it('should return true if the string is English and contain full width character', () => {
-      expect(isEnglish(false, false, true).test('ＡＢＣ')).toBe(true);
+      expect(isEnglish(false, false, false, true).test('ＡＢＣ')).toBe(true);
     });
 
     it('should return false if the string is English and not contain lower case character', () => {
-      expect(isEnglish(false, false, false, false).test('abc')).toBe(false);
+      expect(isEnglish(false, false, false, false, false).test('abc')).toBe(false);
     });
 
     it('should return false if the string is English and not contain upper case character', () => {
-      expect(isEnglish(false, false, false, true, false).test('ABC')).toBe(false);
+      expect(isEnglish(false, false, false, false, true, false).test('ABC')).toBe(false);
     });
   });
 

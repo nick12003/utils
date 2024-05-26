@@ -18,6 +18,7 @@ export const isChinese = (containSpace: boolean = false, mark: boolean = false) 
  * 英文
  *
  * @param containSpace 是否包含空格
+ * @param number 是否包含數字
  * @param mark 是否包含標點符號
  * @param fullWidth 是否包含全形字
  * @param lowercase 是否包含小寫
@@ -28,22 +29,24 @@ export const isChinese = (containSpace: boolean = false, mark: boolean = false) 
  * isEnglish()('abc') // true
  * isEnglish()('abc def') // false
  * isEnglish(true)('abc def') // true
- * isEnglish(false, true)('abc!') // true
- * isEnglish(false, false, true)('ＡＢＣ') // true
- * isEnglish(false, false, false, false, true)('abc') // false
- * isEnglish(false, false, false, true, false)('ABC') // false
+ * isEnglish(false, true)('abc123') // true
+ * isEnglish(false, false, true)('abc!') // true
+ * isEnglish(false, false, false, true)('ＡＢＣ') // true
+ * isEnglish(false, false, false, false, false, true)('abc') // false
+ * isEnglish(false, false, false, false, true, false)('ABC') // false
  */
 export const isEnglish = (
   containSpace: boolean = false,
+  number: boolean = false,
   mark: boolean = false,
   fullWidth: boolean = false,
   lowercase: boolean = true,
   uppercase: boolean = true,
 ) =>
   new RegExp(
-    `^[${lowercase ? 'a-z' : ''}${uppercase ? 'A-Z' : ''}${
+    `^[${lowercase ? 'a-z' : ''}${uppercase ? 'A-Z' : ''}${number ? '\\d' : ''}${
       fullWidth ? 'Ａ-Ｚａ-ｚ' : ''
-    }${mark ? '\\p{P}' : ''}${containSpace ? '\\s' : ''}]+$`,
+    }${mark ? '\\p{P}\\p{S}' : ''}${containSpace ? '\\s' : ''}]+$`,
     'u',
   );
 
@@ -57,12 +60,12 @@ export const isEmail = () =>
 /**
  * 日期字串
  *
- * @param separator 分隔符號 (預設為 -)
+ * @param separator 分隔符號，預設為 '-'
  */
-export const isDateString = (separator = '-') =>
+export const isDateString = (separator: string = '-') =>
   new RegExp(`^\\d{4}${separator}\\d{2}${separator}\\d{2}$`);
 
 /**
  * 統一編號
- * */
+ */
 export const isTaxId = () => /^\d{8}$/;
