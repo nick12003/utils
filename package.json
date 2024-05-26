@@ -58,7 +58,6 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.4.2"
   },
-  "packageManager": "pnpm@8.10.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/nick12003/utils.git"
