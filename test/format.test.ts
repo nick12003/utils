@@ -1,12 +1,17 @@
 import { formatAmount, formatStarMask } from '../src/stringFormat';
 
 describe('formatAmount', () => {
-  it('should return a string with thousand separators', () => {
+  it('should return a string with thousand separators when the input is a number', () => {
     expect(formatAmount(123456789)).toBe('123,456,789');
   });
 
-  it('should return an empty string if the input is not a number', () => {
-    expect(formatAmount('123456789' as unknown as number)).toBe('');
+  it('should return a string with thousand separators when the input is a correct string', () => {
+    expect(formatAmount('123456789')).toBe('123,456,789');
+  });
+
+  it('should return the input string when the input is an incorrect string', () => {
+    expect(formatAmount('123456789a')).toBe('123456789a');
+    expect(formatAmount('0123456789')).toBe('0123456789');
   });
 });
 

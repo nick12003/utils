@@ -1,3 +1,5 @@
+import { isNonZeroStart } from './regexHelpers';
+
 /**
  * 將數字轉換成金額千分位格式
  *
@@ -6,9 +8,12 @@
  * @example
  *
  * formatAmount(1234567) // '1,234,567'
+ * formatAmount('1234567') // '1,234,567'
+ * formatAmount('1234567a') // '1234567a'
+ * formatAmount('01234567') // '01234567'
  */
-export const formatAmount = (num: number) => {
-  if (typeof num !== 'number') return '';
+export const formatAmount = (num: number | string) => {
+  if (typeof num === 'string' && !isNonZeroStart().test(num)) return num;
 
   return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
 };
