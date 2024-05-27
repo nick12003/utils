@@ -1,3 +1,4 @@
+export * from './array';
 export * from './invariant';
 export * from './isServer';
 export * from './logger';
