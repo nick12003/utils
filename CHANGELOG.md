@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.1.0](https://github.com/nick12003/utils/compare/v1.0.1...v1.1.0) (2024-05-27)
+
+
+### Features
+
+* add array function ([e8ac7b2](https://github.com/nick12003/utils/commit/e8ac7b2b7a6aed3eac878d2a5fbef37cefa95ed1))
+* formatAmount accept string arg ([f5a67a3](https://github.com/nick12003/utils/commit/f5a67a36a518a328d56f0c7f7306c013362e2879))
+
+
+### Bug Fixes
+
+* isEnglish regex ([f3dc1c7](https://github.com/nick12003/utils/commit/f3dc1c77dcba30ab423c96cda9575362a9803b2c))
+
 ## [1.0.1](https://github.com/nick12003/utils/compare/v1.0.0...v1.0.1) (2024-03-22)
 
 
