@@ -5,8 +5,11 @@ import {
   hasUpperCase,
   isChinese,
   isDateString,
+  isDecimal,
   isEmail,
   isEnglish,
+  isInteger,
+  isNegativeNumber,
   isNonZeroStart,
   isNumber,
   isNumberAtLeastN,
@@ -111,6 +114,64 @@ describe('regexHelpers', () => {
 
     it('should return false if the string is not number', () => {
       expect(isNumber().test('abc')).toBe(false);
+    });
+  });
+
+  describe('isInteger', () => {
+    it('should return true if the string is 0', () => {
+      expect(isInteger().test('0')).toBe(true);
+    });
+
+    it('should return true if the string is integer', () => {
+      expect(isInteger().test('123')).toBe(true);
+    });
+
+    it('should return true if the string is negative integer', () => {
+      expect(isInteger().test('-123')).toBe(true);
+    });
+
+    it('should return false if the string is not integer', () => {
+      expect(isInteger().test('123.123')).toBe(false);
+    });
+
+    it('should return false if the string is not integer and contain leading zero', () => {
+      expect(isInteger().test('0123')).toBe(false);
+    });
+  });
+
+  describe('isDecimal', () => {
+    it('should return true if the string is decimal', () => {
+      expect(isDecimal().test('123.123')).toBe(true);
+    });
+
+    it('should return true if the string is negative decimal', () => {
+      expect(isDecimal().test('-123.123')).toBe(true);
+    });
+
+    it('should return true if the string is decimal and contain leading zero', () => {
+      expect(isDecimal().test('0.123')).toBe(true);
+    });
+
+    it('should return false if the string is not decimal', () => {
+      expect(isDecimal().test('123')).toBe(false);
+    });
+
+    it('should return false if the integer part of the string contains a leading zero', () => {
+      expect(isDecimal().test('0123.123')).toBe(false);
+    });
+  });
+
+  describe('isNegativeNumber', () => {
+    it('should return true if the string is negative number', () => {
+      expect(isNegativeNumber().test('-123')).toBe(true);
+    });
+
+    it('should return true if the string is negative decimal', () => {
+      expect(isNegativeNumber().test('-123.123')).toBe(true);
+    });
+
+    it('should return false if the string is not negative number', () => {
+      expect(isNegativeNumber().test('123')).toBe(false);
     });
   });
 

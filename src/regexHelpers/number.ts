@@ -3,8 +3,47 @@
  *
  * @example
  * isNumber().test('123') // true
+ * isNumber().test('abc') // false
  */
 export const isNumber = () => /^\d+$/;
+
+/**
+ * 整數
+ *
+ * @example
+ * isInteger().test('0') // true
+ * isInteger().test('0123') // false
+ * isInteger().test('123') // true
+ * isInteger().test('-123') // true
+ * isInteger().test('123.123') // false
+ * isInteger().test('-123.123') // false
+ */
+export const isInteger = () => /^(-?[1-9]\d*|0)$/;
+
+/**
+ * 小數
+ *
+ * @example
+ * isDecimal().test('123') // false
+ * isDecimal().test('-123') // false
+ * isDecimal().test('123.123') // true
+ * isDecimal().test('0123.123') // false
+ * isDecimal().test('-123.123') // true
+ * isDecimal().test('0.123') // true
+ * isDecimal().test('-0.123') // true
+ */
+export const isDecimal = () => /^(-?[1-9]\d*\.\d+|-?0\.\d+)$/;
+
+/**
+ * 負數
+ *
+ * @example
+ * isNegativeNumber().test('-123') // true
+ * isNegativeNumber().test('123') // false
+ * isNegativeNumber().test('-123.123') // true
+ * isNegativeNumber().test('0') // false
+ */
+export const isNegativeNumber = () => /^-\d+(\.\d+)?$/;
 
 /**
  * 非零開頭的數字
@@ -16,6 +55,8 @@ export const isNumber = () => /^\d+$/;
  * isNonZeroNumber().test('0123') // false
  * isNonZeroNumber().test('0') // false
  * isNonZeroNumber(true).test('0') // true
+ *
+ * @deprecated Will be removed in the 2.0.0 version, please use `isInteger` instead
  */
 export const isNonZeroStart = (allowZero: boolean = false) =>
   allowZero ? /^[1-9]\d*|0$/ : /^[1-9]\d*$/;
