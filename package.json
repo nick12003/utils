@@ -42,9 +42,9 @@
   "homepage": "https://github.com/nick12003/utils/",
   "license": "MIT",
   "devDependencies": {
-    "@commitlint/cli": "^19.2.0",
-    "@commitlint/config-conventional": "^19.1.0",
-    "@nick12003/eslint-config-nick": "^1.0.1",
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@nick12003/eslint-config-nick": "^1.1.0",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.11.28",
     "bunchee": "^4.4.8",
@@ -56,7 +56,7 @@
     "prettier": "^3.2.5",
     "ts-jest": "^29.1.2",
     "ts-node": "^10.9.2",
-    "typescript": "^5.4.2"
+    "typescript": "^5.4.5"
   },
   "repository": {
     "type": "git",
