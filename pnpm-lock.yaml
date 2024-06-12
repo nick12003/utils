@@ -15,8 +15,8 @@ importers:
         specifier: ^19.2.2
         version: 19.2.2
       '@nick12003/eslint-config-nick':
-        specifier: ^1.1.0
-        version: 1.1.0(@typescript-eslint/eslint-plugin@7.2.0(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5))(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5)
+        specifier: ^1.1.1
+        version: 1.1.1(@typescript-eslint/eslint-plugin@7.2.0(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5))(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5)
       '@types/jest':
         specifier: ^29.5.12
         version: 29.5.12
@@ -443,8 +443,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.9':
     resolution: {integrity: sha512-3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==}
 
-  '@nick12003/eslint-config-nick@1.1.0':
-    resolution: {integrity: sha512-EAKjzw5T0KtiQg3fXdHYsAsJU62YtsTpiOcjQo/enzoQJXvKlp8g76nTygI/eSP7Wnyl+o8AvMLi1AO/mpXcMw==}
+  '@nick12003/eslint-config-nick@1.1.1':
+    resolution: {integrity: sha512-hbRIiTXynfXPW6ORmFdX2P/GU4fv7TQ3ojjgk81mLbEsVGDBnXd25ulnhNLIrUlvvpHxxwjcJsxw7vhJMWnt9w==}
     peerDependencies:
       '@typescript-eslint/eslint-plugin': '>=7'
       '@typescript-eslint/parser': '>=7'
@@ -3751,7 +3751,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.4.15
 
-  '@nick12003/eslint-config-nick@1.1.0(@typescript-eslint/eslint-plugin@7.2.0(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5))(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5)':
+  '@nick12003/eslint-config-nick@1.1.1(@typescript-eslint/eslint-plugin@7.2.0(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5))(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5)':
     dependencies:
       '@typescript-eslint/eslint-plugin': 7.2.0(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5)
       '@typescript-eslint/parser': 7.2.0(eslint@8.57.0)(typescript@5.4.5)

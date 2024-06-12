@@ -44,7 +44,7 @@
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
-    "@nick12003/eslint-config-nick": "^1.1.0",
+    "@nick12003/eslint-config-nick": "^1.1.1",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.11.28",
     "bunchee": "^4.4.8",
