@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/nick12003/utils/compare/v1.1.0...v1.2.0) (2024-06-12)
+
+
+### Features
+
+* add new number regex ([bbbfdf1](https://github.com/nick12003/utils/commit/bbbfdf1985b3a34b601e5d330a0abf9fb3d3760c))
+
+
+### Bug Fixes
+
+* formatAmount accept decimal string ([d17a9f4](https://github.com/nick12003/utils/commit/d17a9f46cc4ee015a21f6397dc4a9cac3f8765f0))
+
 ## [1.1.0](https://github.com/nick12003/utils/compare/v1.0.1...v1.1.0) (2024-05-27)
 
 
