@@ -13,6 +13,14 @@ describe('formatAmount', () => {
     expect(formatAmount('123456789a')).toBe('123456789a');
     expect(formatAmount('0123456789')).toBe('0123456789');
   });
+
+  it('should return the input string when the input is a string with a leading zero', () => {
+    expect(formatAmount('0.123456789')).toBe('0.123456789');
+  });
+
+  it('should return a string with thousand separators when the input is a string with a decimal part', () => {
+    expect(formatAmount('123456789.123456789')).toBe('123,456,789.123456789');
+  });
 });
 
 describe('formatStarMask', () => {
