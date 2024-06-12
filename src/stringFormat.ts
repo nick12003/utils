@@ -1,4 +1,4 @@
-import { isNonZeroStart } from './regexHelpers';
+import { isDecimal, isInteger } from './regexHelpers';
 
 /**
  * 將數字轉換成金額千分位格式
@@ -11,11 +11,17 @@ import { isNonZeroStart } from './regexHelpers';
  * formatAmount('1234567') // '1,234,567'
  * formatAmount('1234567a') // '1234567a'
  * formatAmount('01234567') // '01234567'
+ * formatAmount('0.1234567') // '0.1234567'
+ * formatAmount('1234567.1234567') // '1,234,567.1234567'
  */
 export const formatAmount = (num: number | string) => {
-  if (typeof num === 'string' && !isNonZeroStart().test(num)) return num;
+  if (typeof num === 'string' && !(isInteger().test(num) || isDecimal().test(num))) return num;
 
-  return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+  const [integerPart, decimalPart] = num.toString().split('.');
+
+  const formattedIntegerPart = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
+  return decimalPart ? `${formattedIntegerPart}.${decimalPart}` : formattedIntegerPart;
 };
 
 /**
